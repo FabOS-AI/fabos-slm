@@ -20,6 +20,8 @@ git sparse-checkout set compose && \
 cd compose
 ```
 
+<div id="start"></div>
+
 ## Start
 
 Set in the file `compose/.env` the variable `SLM_HOSTNAME` to the hostname of the host where the stack will be started. E.g.:
@@ -42,7 +44,23 @@ If you want to delete the data add the `--volumes` flag:
 docker-compose down --remove-orphans --volumes
 ```
 
-## Get configuration
+## Components
+
+### Ports
+The different components of the stack can be reached under the following ports:
+* AWX: [http://myhost.local:80]()
+* Consul: [http://myhost.local:8500]()
+* Keycloak: [http://myhost.local:7080]()
+* Resource Registry: [http://myhost.local:9010]()
+* Service Registry: [http://myhost.local:9020]()
+* Vault: [http://myhost.local:8200]()
+* UI: [http://myhost.local:8080]()
+
+::: warning ATTENTION
+**You need to replace `myhost.local` with the hostname of the host where you have installated the Service Lifecycle Management (see section [Start](#start)).**
+:::
+
+### Get configuration
 
 Most of the settings and credentials are created automatically during first start of the stack. If you want to access the different components of the Service Lifecycle Management stack you need to export the configuration. therefore, wait until the stack is fully started and all init containers have stopped. Then run the config exporter container:
 ```

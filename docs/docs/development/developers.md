@@ -4,7 +4,9 @@ permalink: /docs/getting-started/developers/
 
 # For Developers
 
-**NOTE: The source code of Service Lifecycle Management is not yet publicly available. At the moment, only the executables are available in the form of Docker images. The source code is expected to be made public by the end of 2022.**
+::: warning INFO
+The source code of Service Lifecycle Management is not yet publicly available. At the moment, only the executables are available in the form of Docker images. The source code is expected to be made public by the end of 2022.
+:::
 
 ## Build
 To build the Docker images of in the [setup repository](https://github.com/FabOS-AI/fabos-slm-setup) use the following commands:
