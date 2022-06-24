@@ -17,7 +17,7 @@ module.exports = {
               '/docs/': [
                 {
                   title: 'Getting Started',
-                  collapsable: true,
+                  collapsable: false,
                   children: [
                     'getting-started/',
                     'getting-started/overview',
@@ -39,7 +39,7 @@ module.exports = {
                 },
                 {
                   title: 'Development',
-                  collapsable: true,
+                  collapsable: false,
                   children: [
                     'development/developers',
                   ],
