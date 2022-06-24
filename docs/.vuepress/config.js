@@ -21,8 +21,16 @@ module.exports = {
                   children: [
                     'getting-started/',
                     'getting-started/overview',
+                    'getting-started/architecture',
                     'getting-started/installation',
-                    'getting-started/developers',
+                    'getting-started/first-steps',
+                  ],
+                },
+                {
+                  title: 'Development',
+                  collapsable: false,
+                  children: [
+                    'development/developers',
                   ],
                 },
               ]
