@@ -22,6 +22,7 @@ module.exports = {
                     'getting-started/',
                     'getting-started/overview',
                     'getting-started/installation',
+                    'getting-started/developers',
                   ],
                 },
               ]
