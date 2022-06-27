@@ -39,6 +39,13 @@ module.exports = {
                   ],
                 },
                 {
+                  title: 'Usage',
+                  collapsable: false,
+                  children: [
+                    'usage/',
+                  ],
+                },
+                {
                   title: 'Development',
                   collapsable: false,
                   children: [
