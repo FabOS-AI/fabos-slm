@@ -2,8 +2,8 @@
 home: true
 metaTitle: Service Lifecycle Management
 heroImage: /img/logo.svg
-actionText: Installation →
-actionLink: /docs/getting-started/installation/
+actionText: Getting started →
+actionLink: /docs/getting-started/
 features:
   - title: Resource Management
     details: >

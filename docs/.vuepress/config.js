@@ -29,9 +29,10 @@ module.exports = {
                       collapsable: true,
                       children: [
                         '/docs/getting-started/first-steps/step1-add-resource',
-                        '/docs/getting-started/first-steps/step2-create-service-vendor',
-                        '/docs/getting-started/first-steps/step3-create-service-offering',
-                        '/docs/getting-started/first-steps/step4-deploy-service',
+                        '/docs/getting-started/first-steps/step2-install-deployment-capability',
+                        '/docs/getting-started/first-steps/step3-create-service-vendor',
+                        '/docs/getting-started/first-steps/step4-create-service-offering',
+                        '/docs/getting-started/first-steps/step5-deploy-service',
                       ]
                     },
 
@@ -51,5 +52,6 @@ module.exports = {
         '@vuepress/plugin-back-to-top',
         '@vuepress/plugin-medium-zoom',
         '@dovyp/vuepress-plugin-clipboard-copy',
+        '@vuepress/medium-zoom'
       ],
 }
