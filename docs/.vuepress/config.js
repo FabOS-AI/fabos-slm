@@ -35,7 +35,7 @@ module.exports = {
                         '/docs/getting-started/first-steps/step5-deploy-service',
                       ]
                     },
-
+                    'getting-started/import',
                   ],
                 },
                 {
