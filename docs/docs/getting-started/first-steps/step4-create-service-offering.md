@@ -2,7 +2,7 @@
 permalink: /docs/getting-started/first-steps/step4/
 ---
 
-# Step 4: Createa a aervice offering
+# Step 4: Createa a service offering
 
 As a developer of a service vendor you should now see the section `Service Vendor`:
 ::: tip INFO
