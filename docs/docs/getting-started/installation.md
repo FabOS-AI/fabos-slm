@@ -74,3 +74,50 @@ the host path of this volume:
 ```
 - ./config:/project
 ```
+
+## Known Issues
+
+### Default Deployment Capabilities missing
+
+By default the SLM setup routine adds deployment capabilities for
+
+- docker
+- docker-swarm
+- k3s
+
+which are added during the initial startup. In rare cases this adding process fails and consequently no deployment 
+capabilities are available in the UI:
+
+<figure>
+    <img src="/img/figures/installation/known-issues-missing-dcs-dc-button-disabled.png">
+    <figcaption>Deployment Capability Button disabled because of missing single host deployment capabilities</figcaption>
+</figure>
+
+<figure>
+    <img src="/img/figures/installation/known-issues-missing-dcs-cluster-button-disabled.png">
+    <figcaption>Cluster Button disabled because of missing multi host deployment capabilities</figcaption>
+</figure>
+
+To fix this start the container `resource-registry-init` again by running:
+
+```
+docker-compose up -d resource-registry-init
+```
+
+After the container has started and has added the deployment capabilities and it will stop by itself. The capabilities (single 
+host and cluster) should be available after reloading the ui:
+
+<figure>
+    <img src="/img/figures/installation/known-issues-missing-dcs-dc-button-enabled.png">
+    <figcaption>Deployment Capability Button enabled</figcaption>
+</figure>
+
+<figure>
+    <img src="/img/figures/installation/known-issues-missing-dcs-cluster-button-enabled.png">
+    <figcaption>Cluster Create Button enabled</figcaption>
+</figure>
+
+<figure>
+    <img src="/img/figures/installation/known-issues-missing-dcs-cluster-types-available.png">
+    <figcaption>Default Cluster Types available in selection form</figcaption>
+</figure>
