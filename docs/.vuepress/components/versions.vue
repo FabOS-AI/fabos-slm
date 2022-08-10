@@ -49,25 +49,23 @@ export default {
         }
         return e1.text === e2.text ? 0 : e2.text < e1.text ? -1 : 1;
       });
-      this.options.unshift({value: 'main', text: 'main'});
+      this.options.unshift({value: 'latest', text: 'latest'});
 
       const path = window.location.pathname.toLowerCase();
       let regex = new RegExp('/version/([0-9]+.[0-9]+)');
       let isVersionInPath = regex.test(path);
-      console.log(isVersionInPath)
       if (isVersionInPath) {
           let version = regex.exec(path)[1]
           this.selected = version;
       } else {
-        this.selected = 'main';
+        this.selected = 'latest';
       }
     } catch (ex) {}
   },
   methods: {
     onChange(event) {
-      console.log(event)
       let targetVersionPath = ''
-      if (this.selected === 'main') {
+      if (this.selected === 'latest') {
         targetVersionPath = ''
       } else {
         targetVersionPath = `/version/${this.selected}`
