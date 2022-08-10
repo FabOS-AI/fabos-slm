@@ -18,7 +18,7 @@ Download the latest version of `slm-setup-compose.zip` from the [releases page o
 
 ## Start
 
-Set in the file `compose/.env` the variable `SLM_HOSTNAME` to the hostname of the host where the stack will be started. E.g.:
+Set in the file `.env` the variable `SLM_HOSTNAME` to the hostname of the host where the stack will be started. E.g.:
 ```
 SLM_HOSTNAME=myhost.local
 ```
@@ -66,7 +66,7 @@ docker-compose -f config-exporter.yml -f docker-compose.yml up --force-recreate 
 ```
 
 It will generate by default a sub-directory `config/_conf_generated` relative to your docker-compose.yml file containing 
-the configuration of the setup stack (`slm-config.yml`). If you want another target directory edit in file `compose/config-exporter.yml` 
+the configuration of the setup stack (`slm-config.yml`). If you want another target directory edit in file `config-exporter.yml` 
 the host path of this volume:
 ```
 - ./config:/project
