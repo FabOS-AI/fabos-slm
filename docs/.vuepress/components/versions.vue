@@ -55,18 +55,10 @@ export default {
   methods: {
     onChange(event) {
       const targetVersionPath =
-        this.selected === 'main' ? '' : `version/${this.selected}`;
-      const path = window.location.pathname.toLowerCase();
-      let startIdx = 9;
-      const versionIdx = path.indexOf('/version/');
-      if (versionIdx >= 0) {
-        startIdx = versionIdx + 9;
-      }
-      const endIdx = path.indexOf('/', startIdx);      
+        this.selected === 'main' ? '' : `version/${this.selected}`;    
       window.location.pathname =
-        window.location.pathname +
         targetVersionPath +
-        window.location.pathname.substring(endIdx);
+        window.location.pathname
     },
   },
 };
