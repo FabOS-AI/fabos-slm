@@ -10,12 +10,9 @@ next: /docs/getting-started/first-steps/
 * Docker Compose
 
 ## Download
-Compose files of the stack can be found in the sub-directory `compose` in the [GitHub repository](https://github.com/FabOS-AI/fabos-slm-setup).
+Download the latest version of `slm-setup-compose.zip` from the [releases page on GitHub](https://github.com/FabOS-AI/fabos-slm-setup/releases), which contains the compose files of the stack.
 
-If you don't want to check out the whole repository you can get the latest version via `Git` using this command:
-```sh
-git clone https://github.com/FabOS-AI/fabos-slm-setup.git && cd fabos-slm-setup/compose
-```
+
 
 <div id="start"></div>
 
