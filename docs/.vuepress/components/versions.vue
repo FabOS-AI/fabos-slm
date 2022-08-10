@@ -58,22 +58,18 @@ export default {
       if (this.selected === 'main') {
         targetVersionPath = ''
       } else {
-        targetVersionPath = `/version/${this.selected}/`
+        targetVersionPath = `/version/${this.selected}`
       }
       
       let path = window.location.pathname.toLowerCase();
-      console.log("Old Path:" + path);
-
-      let regex = new RegExp('/version/[0-9]+.[0-9]+/');
+      let regex = new RegExp('/version/[0-9]+.[0-9]+');
       let isVersionInPath = regex.test(path);
       if (isVersionInPath) {
           let versionPathSegment = regex.exec(path)[0]
           path = path.replace(versionPathSegment, targetVersionPath)
-          console.log("New path:" + path);
       }
       else {
           path = targetVersionPath + path
-          console.log("New path:" + path);
       }
       
       window.location.pathname = path
