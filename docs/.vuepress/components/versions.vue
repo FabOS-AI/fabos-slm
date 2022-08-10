@@ -1,11 +1,21 @@
 <template>
-  <span class="nav-item" v-if="options && options.length > 0">
-    Version:
-    <select v-model="selected" @change="onChange">
-      <option v-for="option in options" :value="option.value">
-        {{ option.text }}
-      </option>
-    </select>
+  <span 
+    v-if="options && options.length > 0" 
+    class="nav-item" 
+    data-app
+  >
+      <v-row>
+        <v-col cols="3" align="right">Version:</v-col>
+        <v-col cols="5" align="left">
+          <v-select
+            v-model="selected" 
+            :items="options"
+            outlined
+            dense
+            @change="onChange"
+          />
+        </v-col>
+      </v-row>
   </span>
 </template>
 
@@ -20,14 +30,12 @@ export default {
   },
   created: async function() {
     try {
-      let res = await Axios.get(
-        'https://api.github.com/repos/FabOS-AI/fabos-slm/git/trees/github-pages',
-      );
-      const versionNode = res.data.tree.find(e => {
+      let response = await Axios.get('https://api.github.com/repos/FabOS-AI/fabos-slm/git/trees/github-pages');
+      const versionNode = response.data.tree.find(e => {
         return e.path.toLowerCase() === 'version';
       });
-      res = await Axios.get(versionNode.url);
-      this.options = res.data.tree.map(e => {
+      response = await Axios.get(versionNode.url);
+      this.options = response.data.tree.map(e => {
         return {value: e.path, text: e.path};
       });
       this.options.sort((e1, e2) => {
@@ -42,11 +50,14 @@ export default {
         return e1.text === e2.text ? 0 : e2.text < e1.text ? -1 : 1;
       });
       this.options.unshift({value: 'main', text: 'main'});
+
       const path = window.location.pathname.toLowerCase();
-      if (path.startsWith('/vuepress-test/version/')) {
-        const start = 18;
-        const end = path.indexOf('/', start);
-        this.selected = path.substring(start, end);
+      let regex = new RegExp('/version/([0-9]+.[0-9]+)');
+      let isVersionInPath = regex.test(path);
+      console.log(isVersionInPath)
+      if (isVersionInPath) {
+          let version = regex.exec(path)[1]
+          this.selected = version;
       } else {
         this.selected = 'main';
       }
@@ -54,6 +65,7 @@ export default {
   },
   methods: {
     onChange(event) {
+      console.log(event)
       let targetVersionPath = ''
       if (this.selected === 'main') {
         targetVersionPath = ''

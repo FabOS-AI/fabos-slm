@@ -19,5 +19,8 @@
     "@vuepress/plugin-medium-zoom": "^1.9.7",
     "axios": "^0.21.0",
     "vuepress": "^1.9.7"
+  },
+  "dependencies": {
+    "vuetify": "^2.6.9"
   }
 }
