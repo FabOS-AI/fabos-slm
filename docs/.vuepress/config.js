@@ -1,7 +1,7 @@
 module.exports = {
     title: 'ServiceLifecycleManagement',
     description: 'Service Lifecycle Management',
-    base: `/`,
+    base: `${process.env.VERSION_PATH || '/'}`,
     themeConfig: {
           repo: 'FabOS-AI/fabos-slm',
           logo: '/img/logo.svg',
