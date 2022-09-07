@@ -3,18 +3,40 @@ permalink: /docs/getting-started/import/
 ---
 
 # Import
-
-After initial setup, publicly available content (e.g., service offerings) can be imported into Service Lifecycle Management.
+After initial setup, publicly available content (e.g., service offerings) can be imported into your instance of the Service Lifecycle Management.
 
 ## Service Registry
-To import content into the Service Registry of the Service Lifecycle Management change directory to the `compose` directory of your cloned [fabos-slm-setup repository](https://github.com/FabOS-AI/fabos-slm-setup/) and execute the following command:
+To import content into the Service Registry of the Service Lifecycle Management local directories or git repositories can be used. See the two sections below for more information how to configure import from local directories or git repositories. The import can be started using this command:
+``` sh
+docker-compose up --force-recreate service-registry-init
 ```
-mkdir init && cd init && git clone https://github.com/FabOS-AI/fabos-slm-service-registry-content.git && mv fabos-slm-service-registry-content service-registry & cd ..
+
+### Local Directories
+Update in the `.env` file in the `compose` directory the variable `SERVICE_REGISTRY_INITIALIZATION_LOCAL_DIRECTORIES` with your directories. Multiple directories must be seperated by comma. The defined directories must be added as volumes to the `service-registry-init` service in the `docker-compose.yml`.
+
+Example of `.env`:
+``` sh
+SERVICE_REGISTRY_INITIALIZATION_LOCAL_DIRECTORIES=/my/local/dir1,/my/local/dir2
 ``` 
 
-It will create a directory `init` and download the content from a GitHub repository into the sub-directory `init/service-registry`. The import can be started using this command:
+Example of `docker-compose.yml`:
+``` yaml
+...
+  service-registry-init:
+    ...
+    volumes:
+    ...
+    - "/my/local/dir1:/my/local/dir1"
+    - "/my/local/dir2:/my/local/dir2"
+...
 ```
-docker-compose up service-registry-init
+
+### Git Repositories
+Update in the `.env` file in the `compose` directory the variable `SERVICE_REGISTRY_INITIALIZATION_GIT_REPOS` with your git repositories. Default value is the public [service registry content repository](https://github.com/FabOS-AI/fabos-slm-service-registry-content). Multiple git repositories must be seperated by comma. Authentication for a git repository can be defined in the form `{Username}:{PasswordOrAccessToken}@{RepoUrl}`.
+
+Example:
+``` sh
+SERVICE_REGISTRY_INITIALIZATION_GIT_REPOS=https://github.com/FabOS-AI/fabos-slm-service-registry-content.git,myGitUser:myGitUserPassword@https://my-private-git-repo.git
 ```
 
 ## Resource Registry
@@ -26,7 +48,7 @@ The tool was initially only intended for a quick repopulation of the Resource Re
 :::
 
 Since the tool interacts with the REST-API of the ``Resource Registry``, to use the tool just clone the repo into any directory:
-```console
+``` sh
 git clone https://github.com/FabOS-AI/fabos-slm-resource-registry-init && cd fabos-slm-resource-registry-init
 ``` 
 
@@ -68,13 +90,13 @@ Especially in a setup with docker be aware of the correct host used in the ``SLM
 :::
 
 Finally, the tool can be run through Docker. Therefore use Docker-Compose to build and run the tool:
-```console
+``` sh
 docker-compose up --build
 ```
 
 A successful run of the tool will print a summary at the end of the run. For the given resource in the `example.xlsx` file, the summary looks like this:
 
-```console
+```
 resource-registry-init  | SUMMARY -------------------------------------------------------------------------------------------------------------------
 resource-registry-init  | Resources deleted (via REST): []
 resource-registry-init  | Resources accessible (via ping): []
