@@ -5,7 +5,7 @@ permalink: /docs/usage/capabilities
 # Capabilities
 
 ## Deployment Capabilities
-Deployment Capabilities are used to deploy a service on a resource. They can be added dynamically via the REST API of the [Resource Registry](/docs/usage/api/#resource-registry).
+Deployment Capabilities are used to deploy a service on a resource. They can be added dynamically via the REST API of the [Resource Registry](/docs/usage/api/#resource-registry). To simplify the use of the API the requests related to capabilites are available in the [public Postman workspace](https://www.postman.com/fabos-ai/workspace/service-lifecycle-management/folder/22732344-bc9fe87a-30cc-41aa-a3d9-4d1d39a1f4e4). The initial setup of Postman is described [here](/docs/usage/api/#postman).
 
 ### Import officially supported Deployment Capabilities
 After installation, a new Service Lifecycle Management instance has no deployment capabilities. By default, the compose stack of the Service Lifecycle Management includes a service `resource-registry-init`. This service imports the officially supported capabilities during the first startup:
