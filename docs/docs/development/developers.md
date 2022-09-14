@@ -1,5 +1,5 @@
 ---
-permalink: /docs/getting-started/developers/
+permalink: /docs/development/developers/
 ---
 
 # For Developers
