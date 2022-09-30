@@ -9,20 +9,20 @@ module.exports = {
       },
       consul: {
         version: {
-          full: '1.10.0',
-          api: 'v1.10.x'
+          full: '1.13.2',
+          api: 'v1.13.x'
         }
       },
       keycloak: {
         version: {
-          full: '12.0.4',
-          api: '12.0'
+          full: '19.0.2',
+          api: '18.0'
         }
       },
       vault: {
         version: {
-          full: '1.8.1',
-          api: 'v1.8.x'
+          full: '1.11.3',
+          api: 'v1.11.x'
         }
       } 
     }
