@@ -8,20 +8,19 @@ permalink: /docs/development/developers/
 The source code of Service Lifecycle Management is not yet publicly available. At the moment, only the executables are available in the form of Docker images. The source code is expected to be made public by the end of 2022.
 :::
 
-## Build
-To build the Docker images of in the [setup repository](https://github.com/FabOS-AI/fabos-slm-setup) use the following commands:
-```
-docker-compose -f build.yml -f docker-compose.yml build --no-cache awx-fixed-files
-docker-compose -f build.yml -f config-exporter.yml -f docker-compose.yml build --no-cache
-```
-
 ## Local development
 
-### Edit compose file
+### Install
+To setup the latest snapshot version, checkout the develop branch of the [fabos-slm-setup GitHub repository](https://github.com/FabOS-AI/fabos-slm-setup) and follow the [installation instructions](/docs/getting-started/installation/).
+
+### Configuration
+
+**1) Edit compose file**
 
 Edit in file `compose/config-exporter.yml` the volume path and environment as described below.
 
-#### Volume path
+**1.1) Set volume path**
+
 Edit the host path of this volume
 ```
 - {{ /path/to/core/project/on/your/computer }}:/project
@@ -29,20 +28,27 @@ Edit the host path of this volume
 to the path of core project on your local computer. If you are using Docker Desktop for Windows add the above path 
 in `Settings -> Resources -> FILE SHARING`.
 
-#### Environment
+**1.2) Environment**
+
 Set the environment variable `CONFIGURE_CORE_PROJECT` to `true`:
 ```
 - CONFIGURE_CORE_PROJECT=true
 ```
 
-### Run config exporter
+**2) Run config exporter**
+
 Wait until the stack is fully started and all init containers have stopped. Then run the config exporter container, 
 which will override the configuration files in your core project (not yet public available):
 ```
 docker-compose -f config-exporter.yml -f docker-compose.yml up --force-recreate config-exporter
 ```
 
-### Rebuild and start stack
+**3) IDE**
+Stop the containers relevant for your development and start the components in your IDE. Through the Config Exporter, the your local project has been configured to allow the components started via IDE to connect to the locally deployed stack.
+
+## Build
+To build the Docker images of in the [setup repository](https://github.com/FabOS-AI/fabos-slm-setup) use the following commands:
 ```
-docker-compose down --volumes --remove-orphans && docker-compose -f build.yml -f dev-helper.yml -f docker-compose.yml build --no-cache && docker-compose up -d
+docker-compose -f build.yml -f docker-compose.yml build --no-cache awx-fixed-files
+docker-compose -f build.yml -f config-exporter.yml -f docker-compose.yml build --no-cache
 ```
