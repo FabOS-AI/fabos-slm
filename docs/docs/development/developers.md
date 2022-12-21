@@ -40,7 +40,7 @@ Set the environment variable `CONFIGURE_CORE_PROJECT` to `true`:
 Wait until the stack is fully started and all init containers have stopped. Then run the config exporter container, 
 which will override the configuration files in your core project (not yet public available):
 ```
-docker-compose -f config-exporter.yml -f docker-compose.yml up --force-recreate config-exporter
+docker-compose up --force-recreate config-exporter
 ```
 
 **3) IDE**
@@ -49,6 +49,6 @@ Stop the containers relevant for your development and start the components in yo
 ## Build
 To build the Docker images of in the [setup repository](https://github.com/FabOS-AI/fabos-slm-setup) use the following commands:
 ```
-docker-compose -f build.yml -f docker-compose.yml build --no-cache awx-fixed-files
-docker-compose -f build.yml -f config-exporter.yml -f docker-compose.yml build --no-cache
+docker-compose -f build.yml -f {{ compose file containing the service to be built }}.yml build --no-cache awx-fixed-files
+docker-compose -f build.yml -f {{ compose file containing the service to be built }}.yml build --no-cache
 ```
