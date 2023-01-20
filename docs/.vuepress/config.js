@@ -44,6 +44,7 @@ module.exports = {
                   children: [
                     'usage/',
                     'usage/capabilities',
+                    'usage/clusters',
                     'usage/api',
                     'usage/reporting-issues',
                   ],

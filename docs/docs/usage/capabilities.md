@@ -12,6 +12,7 @@ After installation, a new Service Lifecycle Management instance has no deploymen
 * [Docker](https://github.com/FabOS-AI/fabos-slm-dc-docker)
 * [Docker Swarm](https://github.com/FabOS-AI/fabos-slm-dc-docker-swarm)
 * [K3S](https://github.com/FabOS-AI/fabos-slm-dc-k3s)
+* [K8S](https://github.com/FabOS-AI/fabos-slm-dc-k8s)
 
 ### Add a new Deployment Capability
 Additional deployment capabilites can be imported using the endpoint `POST /resources/capabilites` of the Resource Registry. A request at the example of the [Docker Deployment Capability](https://github.com/FabOS-AI/fabos-slm-dc-docker) looks like this:
@@ -90,3 +91,9 @@ If a Deployment Capability is located in a private git repository, username and 
 }
 ...
 ```
+
+### Use deployment capability to deploy service offerings
+To allow a deployment capability to deploy a service offering with a particular deployment type, that deployment type must be defined in the `supportedDeploymentTypes` property of the deployment capability. Currently, service offerings can have the following deployment types:
+* DOCKER_CONTAINER 
+* DOCKER_COMPOSE
+* KUBERNETES
