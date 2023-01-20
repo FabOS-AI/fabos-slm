@@ -53,7 +53,8 @@ module.exports = {
                   title: 'Development',
                   collapsable: true,
                   children: [
-                    'development/developers',
+                    'development/development-environment',
+                    'development/debugging',
                   ],
                 },
               ]

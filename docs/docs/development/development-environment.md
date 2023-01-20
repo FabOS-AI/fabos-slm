@@ -1,8 +1,8 @@
 ---
-permalink: /docs/development/developers/
+permalink: /docs/development/development-environment/
 ---
 
-# For Developers
+# Development Environment
 
 ::: warning INFO
 The source code of Service Lifecycle Management is not yet publicly available. At the moment, only the executables are available in the form of Docker images. The source code is expected to be made public by the end of 2022.
