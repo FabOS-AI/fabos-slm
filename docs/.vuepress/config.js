@@ -45,6 +45,7 @@ module.exports = {
                     'usage/',
                     'usage/capabilities',
                     'usage/clusters',
+                    'usage/service-offerings',
                     'usage/api',
                     'usage/reporting-issues',
                   ],
