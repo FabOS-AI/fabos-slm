@@ -2,6 +2,5 @@
 permalink: /docs/usage/
 ---
 
-# Reporting Issues
-
-If you have any issues using the Service Lifecycle Management or feature requests, please use our issue tracker on [GitHub](https://github.com/FabOS-AI/fabos-slm/issues).
+# Overview
+This section is intended to provide information and tips on using FabOS Service Lifecycle Management and its components.

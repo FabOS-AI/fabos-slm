@@ -62,7 +62,7 @@ The different components of the stack can be reached under the following ports:
 
 Most of the settings and credentials are created automatically during first start of the stack. If you want to access the different components of the Service Lifecycle Management stack you need to export the configuration. Wait until the stack is fully started and all init containers have stopped. Then run the config exporter container:
 ```
-docker-compose -f config-exporter.yml -f docker-compose.yml up --force-recreate config-exporter
+docker-compose up --force-recreate config-exporter
 ```
 
 It will generate by default a sub-directory `config/_conf_generated` relative to your docker-compose.yml file containing 
