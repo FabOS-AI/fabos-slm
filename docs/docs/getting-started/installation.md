@@ -10,9 +10,7 @@ next: /docs/getting-started/first-steps/
 * Docker Compose
 
 ## Download
-Download the latest version of `slm-setup-compose.zip` from the [releases page on GitHub](https://github.com/FabOS-AI/fabos-slm-setup/releases), which contains the compose files of the stack.
-
-
+Download the latest version of `slm-setup-compose.zip` from the [releases page on GitHub](https://github.com/FabOS-AI/fabos-slm/releases), which contains the compose files of the stack.
 
 <div id="start"></div>
 
@@ -24,7 +22,7 @@ SLM_HOSTNAME=myhost.local
 ```
 
 ::: warning ATTENTION
-**Use lower case for the hostname to avoid case problems (e.g. with token authentication)**
+**Use lowercase for the hostname to avoid case problems (e.g. with token authentication)**
 :::
 
 Start the whole stack:
