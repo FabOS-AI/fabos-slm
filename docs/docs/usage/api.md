@@ -6,7 +6,7 @@ permalink: /docs/usage/api/
 All components of the Service Lifecycle Management have a REST API. More details about the individual APIs are described below.
 
 ## Authentication
-All APIs are secured using token-based authentication via Keycloak. To get a access token from Keycloak, the request below can be used. It will return a JSON containg a filed `access_token`. This token must be used for authentication on the component APIs.
+All APIs are secured using token-based authentication via Keycloak. To get a access token from Keycloak, the request below can be used. It will return a JSON containing a filed `access_token`. This token must be used for authentication on the component APIs.
 ::: warning ATTENTION
 `<<your-slm-host>>`, `<<your-username>>` and `<<your-password>>`must be replaced!
 :::
@@ -30,24 +30,37 @@ The REST API of AWX is reachable under the following URL `http://<<your-slm-host
 Version: {{ $var.consul.version.full }} \
 The REST API of Consul is reachable under the following URL `http://<<your-slm-host>>:8500/v1`. Further information on how to use des Consul REST API can be found in the <a :href="'https://www.consul.io/api-docs/' + $var.consul.version.api" target="_blank">API docs of Consul</a>.
 
-
 ### Keycloak
 Version: {{ $var.keycloak.version.full }} \
-The REST API of Keycloak is reachable unter the following URL `http://<<your-slm-host>>:7080/auth`. For configuration Keycloak has a Admin REST API, which is described <a :href="'https://www.keycloak.org/docs-api/' + $var.keycloak.version.api + '/rest-api/' " target="_blank">here</a>.
+The REST API of Keycloak is reachable under the following URL `http://<<your-slm-host>>:7080/auth`. For configuration Keycloak has a Admin REST API, which is described <a :href="'https://www.keycloak.org/docs-api/' + $var.keycloak.version.api + '/rest-api/' " target="_blank">here</a>.
 
+### BaSyx AAS Registry
+
+Version: 1.2.0\
+The REST API of BaSyx AAS Registry is reachable under the following URL `http://<<your-slm-host>>:4000/registry`. API documentation is available on SwaggerHub: <https://app.swaggerhub.com/apis/BaSyx/BaSyx_Registry_API/v1#/>
+
+### BaSyx AAS Server
+
+Version: 1.2.0\
+The REST API of BaSyx AAS Server is reachable under the following URL `http://<<your-slm-host>>:4001/aasServer`. API documentation is available on SwaggerHub: <https://app.swaggerhub.com/apis/BaSyx/basyx_asset_administration_shell_repository_http_rest_api/v1>
+
+### BaSyx AAS GUI
+
+Version: v230113\
+The web interface of the BaSyx/Fraunhofer [AAS GUI](https://github.com/eclipse-basyx/basyx-applications/tree/main/aas-gui) is reachable under `http://<<your-slm-host>>:3000`.
 
 ### Notification Service
-The REST API of the Service Registry is reachable unter the following URL `http://<<your-slm-host>>:9001`. API documentation is available via Swagger `http://<<your-slm-host>>:9001/swagger-ui/index.html`. When requests are made via the Swagger UI, an Authorization is required via the "Authorize" button. If spring_oauth is used, it will redirect to the Keycloak login page.
+The REST API of the Service Registry is reachable under the following URL `http://<<your-slm-host>>:9001`. API documentation is available via Swagger `http://<<your-slm-host>>:9001/swagger-ui/index.html`. When requests are made via the Swagger UI, an Authorization is required via the "Authorize" button. If spring_oauth is used, it will redirect to the Keycloak login page.
 
 ### Resource Registry
-The REST API of the Service Registry is reachable unter the following URL `http://<<your-slm-host>>:9010`. API documentation is available via Swagger `http://<<your-slm-host>>:9010/swagger-ui/index.html`. When requests are made via the Swagger UI, an Authorization is required via the "Authorize" button. If spring_oauth is used, it will redirect to the Keycloak login page.
+The REST API of the Service Registry is reachable under the following URL `http://<<your-slm-host>>:9010`. API documentation is available via Swagger `http://<<your-slm-host>>:9010/swagger-ui/index.html`. When requests are made via the Swagger UI, an Authorization is required via the "Authorize" button. If spring_oauth is used, it will redirect to the Keycloak login page.
 
 ### Service Registry
-The REST API of the Service Registry is reachable unter the following URL `http://<<your-slm-host>>:9020`. API documentation is available via Swagger `http://<<your-slm-host>>:9020/swagger-ui/index.html`. When requests are made via the Swagger UI, an Authorization is required via the "Authorize" button. If spring_oauth is used, it will redirect to the Keycloak login page.
+The REST API of the Service Registry is reachable under the following URL `http://<<your-slm-host>>:9020`. API documentation is available via Swagger `http://<<your-slm-host>>:9020/swagger-ui/index.html`. When requests are made via the Swagger UI, an Authorization is required via the "Authorize" button. If spring_oauth is used, it will redirect to the Keycloak login page.
 
 ### Vault
 Version: {{ $var.vault.version.full }} \
-The REST API of Keycloak is reachable unter the following URL `http://<<your-slm-host>>:8200/v1`. Further information on how to use des Consul REST API can be found in the <a :href="'https://www.vaultproject.io/api-docs/' + $var.vault.version.api" target="_blank">API docs of Vault</a>.
+The REST API of Keycloak is reachable under the following URL `http://<<your-slm-host>>:8200/v1`. Further information on how to use des Consul REST API can be found in the <a :href="'https://www.vaultproject.io/api-docs/' + $var.vault.version.api" target="_blank">API docs of Vault</a>.
 
 ## Postman
 In order to simplify the use of the API, there is a public [Postman workspace](https://www.postman.com/fabos-ai/workspace/service-lifecycle-management). The requests can be viewed without a Postman account. For sending requests, an account and a locally installed [Postman desktop client](https://www.postman.com/downloads/) are required:
