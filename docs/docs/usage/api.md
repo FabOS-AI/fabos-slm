@@ -36,17 +36,17 @@ The REST API of Keycloak is reachable under the following URL `http://<<your-slm
 
 ### BaSyx AAS Registry
 
-Version: 1.2.0\
+Version: {{ $var.basyx.version.registry }} \
 The REST API of BaSyx AAS Registry is reachable under the following URL `http://<<your-slm-host>>:4000/registry`. API documentation is available on SwaggerHub: <https://app.swaggerhub.com/apis/BaSyx/BaSyx_Registry_API/v1#/>
 
 ### BaSyx AAS Server
 
-Version: 1.2.0\
+Version: {{ $var.basyx.version.server }} \
 The REST API of BaSyx AAS Server is reachable under the following URL `http://<<your-slm-host>>:4001/aasServer`. API documentation is available on SwaggerHub: <https://app.swaggerhub.com/apis/BaSyx/basyx_asset_administration_shell_repository_http_rest_api/v1>
 
 ### BaSyx AAS GUI
 
-Version: v230113\
+Version: {{ $var.basyx.version.gui }} \
 The web interface of the BaSyx/Fraunhofer [AAS GUI](https://github.com/eclipse-basyx/basyx-applications/tree/main/aas-gui) is reachable under `http://<<your-slm-host>>:3000`.
 
 ### Notification Service
