@@ -24,7 +24,14 @@ module.exports = {
           full: '1.11.3',
           api: 'v1.11.x'
         }
-      } 
+      },
+      basyx: {
+        version: {
+          registry: '1.2.0',
+          server: '1.2.0',
+          gui: 'v230113'
+        }
+      }
     }
   }
 ]],
