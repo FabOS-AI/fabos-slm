@@ -1,3 +1,1 @@
-# Service Lifecycle Management
-
-[https://slm.docs.fab-os.org](https://slm.docs.fab-os.org)
+The Service Lifecycle Management was transferred to the [Eclipse Service Lifecycle Management](https://projects.eclipse.org/projects/dt.slm) project at the Eclipse Foundation. Therefore, this repository was transferred to the new repository [eclipse-slm/slm](https://github.com/eclipse-slm/slm) and set to archived.
